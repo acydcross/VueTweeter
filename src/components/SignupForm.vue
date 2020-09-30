@@ -16,6 +16,7 @@
 
 <script>
 import axios from "axios";
+import cookies from "vue-cookies"
 
 export default {
   name: "sigup-form",
@@ -47,7 +48,8 @@ export default {
           }
         })
         .then(response => {
-          console.log(response);
+            // WRITE LOGIC TO ENSURE TOKEN WAS SENT
+          cookies.set('session', response.data.loginToken)
         })
         .catch(error => {
           console.log(error);
