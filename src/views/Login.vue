@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>THIS IS THE LOGIN</h1>
         <p>Email</p>
         <input type="text" id="email-input" v-model="email">
         <p>Password</p>
