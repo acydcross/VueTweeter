@@ -1,17 +1,11 @@
 <template>
-    <div class="profile">
-        
-    </div>
+  <div class="profile"></div>
 </template>
 
 <script>
-import cookies from "vue-cookies"
+import cookies from "vue-cookies";
 
-    export default {
-        
-    }
+export default {};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
