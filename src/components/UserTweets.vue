@@ -1,42 +1,68 @@
 <template>
-    <div class="user-tweets">
-        <user-tweets></user-tweets>
-    </div>
+  <div class="user-tweets">
+    <p>What's happening?</p>
+    <input type="text" id="tweet-post" v-model="tweetContent" />
+    <button id="tweet-post-button" @click="tweetPost">post</button>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
-import UserTweets from "./components/UserTweets.vue";
-// import cookies from "vue-cookies";
-    export default {
-        name: "user-tweets",
-        components: {
-            UserTweets
-        },
-        data() {
-            return {
-                tweetId: "",
-                userId: "",
-                username: "",
-                content: "",
-                createdAt: ""
-            };
-        },
-        methods: {
-            tweetUser: function() {
-                axios.request({
-                    method: "GET",
-                    url: "https://tweeterest.ml/api/tweets",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Api-Key": "fOytoHincX2T35xWW2Dmx6U6D21Q2Z2DedeWJPo9F3hLC"
-                    },
-                })
-            }
-        }
+import cookies from "vue-cookies";
+
+export default {
+  name: "user-tweets",
+  data() {
+    return {
+      tweetContent: "",
+      loginToken: cookies.get("loginToken")
+    };
+  },
+  methods: {
+    tweetUser: function() {
+      axios
+        .request({
+          method: "GET",
+          url: "https://tweeterest.ml/api/tweets",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Api-Key": "fOytoHincX2T35xWW2Dmx6U6D21Q2Z2DedeWJPo9F3hLC"
+          },
+          data: {
+            tweetId: this.tweetId
+          }
+        })
+        .then(response => {
+          console.log(response);
+          this.submit = true;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    tweetPost: function() {
+      axios
+        .request({
+          method: "POST",
+          url: "https://tweeterest.ml/api/tweets",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Api-Key": "fOytoHincX2T35xWW2Dmx6U6D21Q2Z2DedeWJPo9F3hLC"
+          },
+          params: {
+            loginToken: cookies.get("loginToken")
+          }
+        })
+        .then(response => {
+          console.log(response);
+          this.submit = true;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
+  }
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

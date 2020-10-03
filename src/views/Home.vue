@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>F Tweeter Clone</h1>
+    <h1>F Twetter Clone</h1>
     <login-page></login-page>
     <p>or</p>
     <signup-page></signup-page>
