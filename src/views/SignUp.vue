@@ -1,8 +1,8 @@
 <template>
   <div>
-    <router-link to="/login">Login</router-link>
     <h1>Sign Up Page</h1>
     <signup-form></signup-form>
+    <router-link to="/login">Login</router-link>
   </div>
 </template>
 

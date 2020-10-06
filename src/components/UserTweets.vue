@@ -3,6 +3,8 @@
     <p>What's happening?</p>
     <input type="text" id="tweet-post" v-model="tweetContent" />
     <button id="tweet-post-button" @click="tweetPost">post</button>
+    <div></div>
+    <router-link to="/">Home</router-link>
   </div>
 </template>
 
