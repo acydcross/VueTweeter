@@ -43,7 +43,6 @@ export default {
           this.loginStatus = "Success";
           cookies.set("session", response.data.loginToken);
           this.$router.push("/user");
-          // Send user to "home page"
         })
         .catch(error => {
           console.log(error);

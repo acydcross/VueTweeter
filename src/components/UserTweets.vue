@@ -4,7 +4,9 @@
     <input type="text" id="tweet-post" v-model="tweetContent" />
     <button id="tweet-post-button" @click="tweetPost">post</button>
     <div></div>
-    <router-link to="/">Home</router-link>
+    <router-link to="/user">Home</router-link>
+    <br>
+    <router-link to="/profile">Profile</router-link>
   </div>
 </template>
 
