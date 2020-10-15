@@ -7,6 +7,9 @@
     <router-link to="/user">Home</router-link>
     <br>
     <router-link to="/profile">Profile</router-link>
+    <h3>{{ tweetObject.username }}</h3>
+    <p>{{ tweetObject.content }}</p>
+    <h5>{{ tweetObject.createdAt }}</h5>
     <tweet-delete :tweetId="tweetOject.tweetId"></tweet-delete>
   </div>
 </template>
@@ -20,6 +23,12 @@ export default {
   name: "user-tweets",
   components: {
     TweetDelete,
+  },
+  props: {
+    tweetObject: {
+      type: Object,
+      required: true
+    }
   },
   data() {
     return {
