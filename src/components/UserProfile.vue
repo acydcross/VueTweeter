@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 id="name-user">Hello, {{ user.userId }}.</h2>
-    <h3>
+    <h3 v-for="user in users" :key="user">
       {{ user.email }}
       {{ user.birthdate }}
       {{ user.bio }}
@@ -16,12 +16,9 @@ export default {
   name: "user-profile",
   data() {
     return {
-      email: "",
-      birthdate: "",
-      bio: ""
+      users: []
     };
   },
-  methods: {
     userProfile: function() {
       axios
         .request({
@@ -45,8 +42,7 @@ export default {
           this.loginStatus = "fail";
         });
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped></style>

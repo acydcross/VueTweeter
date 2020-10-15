@@ -7,15 +7,20 @@
     <router-link to="/user">Home</router-link>
     <br>
     <router-link to="/profile">Profile</router-link>
+    <tweet-delete :tweetId="tweetOject.tweetId"></tweet-delete>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import cookies from "vue-cookies";
+import TweetDelete from "./TweetDelete.vue";
 
 export default {
   name: "user-tweets",
+  components: {
+    TweetDelete,
+  },
   data() {
     return {
       tweetContent: "",

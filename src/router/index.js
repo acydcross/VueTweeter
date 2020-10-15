@@ -5,7 +5,7 @@ import LoginPage from "../views/Login.vue";
 import HomePage from "../views/Home.vue";
 import UserHome from "../views/UserHome.vue";
 import UserTweets from "../components/UserTweets.vue";
-import UserProfile from "../components/UserProfile.vue";
+import ProfilesPage from "../views/Profiles.vue";
 
 Vue.use(VueRouter);
 
@@ -36,10 +36,11 @@ const routes = [
     component: UserHome
   },
   {
-    path: "/profile",
-    name: "user-profile",
-    component: UserProfile
-  }
+    path: "/profiles",
+    name: "profiles-page",
+    component: ProfilesPage
+  },
+  
 ];
 
 const router = new VueRouter({

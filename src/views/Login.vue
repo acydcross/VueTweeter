@@ -3,9 +3,11 @@
     <p>Email</p>
     <input type="text" id="email-input" v-model="email" />
     <p>Password</p>
-    <input type="text" id="password-input" v-model="password" />
+    <input type="password" id="password-input" v-model="password" />
     <h2 @click="loginUser">Login</h2>
     <h3>{{ loginStatus }}</h3>
+    <p>or</p>
+    <router-link to="/signup">Create New Account</router-link>
   </div>
 </template>
 
