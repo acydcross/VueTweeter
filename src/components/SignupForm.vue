@@ -44,13 +44,15 @@ export default {
             username: this.username,
             password: this.password,
             bio: this.bio,
-            birthdate: this.birthday
+            birthdate: this.birthdate
           }
         })
         .then(response => {
           // WRITE LOGIC TO ENSURE TOKEN WAS SENT
-          cookies.set("session", response.data.loginToken);
-        })
+          console.log(response)
+          cookies.set("session", response.data.loginToken)
+          this.$router.push("/user")
+        }) // SEND TO HOME PAGE
         .catch(error => {
           console.log(error);
         });

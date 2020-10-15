@@ -15,7 +15,7 @@ export default {
   name: "home-page",
   components: {
     LoginPage,
-    SignupPage
+    SignupPage,
   }
 };
 </script>
